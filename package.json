@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "start": "next start",
-    "build": "next build ",          
+    "build": "cross-env NEXT_PUBLIC_ENV=prod next build && next export",
     "serve": "npx serve out",
-    "deploy": "gh-pages -d out",
-    "git": "npm run build && npm run deploy"
+    "deploy": "npm run build && gh-pages -d out",
+    "git": "npm run deploy"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
@@ -21,6 +21,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.0.0",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

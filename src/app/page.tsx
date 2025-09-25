@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="bg-gray-300 h-[50px] flex items-center justify-center">
+      <header className="bg-black-300 h-[50px] flex items-center justify-center">
         <img src="/logo-light.png" alt="Logo" className="h-16" />
       </header>
       
