@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "start": "next start",
     "build": "next build ",          
-    "serve": "npx serve out",      
+    "serve": "npx serve out",
     "deploy": "gh-pages -d out",
     "git": "npm run build && npm run deploy"
   },
