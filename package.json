@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",          // no next export needed
-    "serve": "npx serve out",       // preview the static export locally
+    "start": "next start",
+    "build": "next build ",          
+    "serve": "npx serve out",      
     "deploy": "gh-pages -d out",
     "git": "npm run build && npm run deploy"
   },
