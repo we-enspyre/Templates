@@ -18,6 +18,8 @@ export default function Home() {
 
   const [activeIframe, setActiveIframe] = useState<string | null>(null);
 
+  const basePath = process.env.PAGES_BASE_PATH || "";
+
   useEffect(() => {
     document.body.style.overflow = activeIframe ? "hidden" : "";
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActiveIframe(null);
@@ -31,9 +33,13 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-black-300 h-[50px] flex items-center justify-center">
-        <img src="/logo-light.png" alt="Logo" className="h-16" />
+        <img
+          src={`${basePath}/logo-light.png`}
+          alt="Logo"
+          className="h-16"
+        />
       </header>
-      
+
       <main className="flex-1 flex flex-col items-center py-8 px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
           {iframeLinks.map((item, idx) => (
@@ -41,15 +47,13 @@ export default function Home() {
               key={idx}
               className="relative bg-white rounded-xl shadow-md overflow-hidden w-[calc(100%+20px)] group"
             >
-              {/* interactive iframe */}
               <iframe
                 title={item.name}
                 src={item.src}
-                className="w-full h-100"
+                className="w-full h-[300px] sm:h-[350px] lg:h-[400px]"
                 allowFullScreen
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />
-              
-              {/* Centered Preview button, visible only on hover */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -60,7 +64,6 @@ export default function Home() {
               >
                 Preview
               </button>
-              
               <div className="p-2 text-center font-medium text-black">
                 {item.name}
               </div>
@@ -91,11 +94,12 @@ export default function Home() {
               src={activeIframe}
               className="w-full h-full"
               allowFullScreen
+              sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
             />
           </div>
         </div>
       )}
-      
+
       <footer className="bg-gray-300 h-[50px] flex items-center justify-center"></footer>
     </div>
   );
