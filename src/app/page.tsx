@@ -4,9 +4,7 @@ export default function Home() {
     "https://wp-themes.com/education-formula/",
     "https://fse.catchthemes.com/kiddiemart/",
     "https://roblogdemo.wordpress.com/?demo",
-    "https://demo.themeisle.com/neve/",
     "https://demo.themeisle.com/hestia/",
-    "https://demo.themeisle.com/shopisle/",
   ];
 
   return (
