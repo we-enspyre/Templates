@@ -1,12 +1,8 @@
-import type { NextConfig } from "next";
-
-const isProd = process.env.NODE_ENV === "production";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  output: "export",
-  images: { unoptimized: true },
-  basePath: isProd ? "/Templates" : "",
-  assetPrefix: isProd ? "/Templates/" : "",
+  output: 'export',
+  basePath: process.env.PAGES_BASE_PATH,
 };
 
 export default nextConfig;
