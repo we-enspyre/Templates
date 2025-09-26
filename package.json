@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "start": "next start",
-    "build": "cross-env NEXT_PUBLIC_ENV=prod next build && next export",
+    "build": "cross-env NEXT_PUBLIC_ENV=prod next build",
     "serve": "npx serve out",
     "deploy": "npm run build && gh-pages -d out",
     "git": "npm run deploy"
